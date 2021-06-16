@@ -2,6 +2,8 @@
 build/
 devel/
 .catkin_workspace
+*.zip
+val2017/
 
 
 # Repo Detectron2
