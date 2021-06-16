@@ -2,8 +2,7 @@
 build/
 devel/
 .catkin_workspace
-*.zip
-val2017/
+dataset/
 
 
 # Repo Detectron2
