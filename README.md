@@ -28,8 +28,42 @@
     - !wget http://images.cocodataset.org/annotations/annotations_trainval2017.zip    (Using in Colab)
 
 ---
+## How to clone repo
 
+If you have ssh-key, you can run this command
+```
+$ git clone git@github.com:DiaboloKiat/project-Mask-RCNN.git
+```
 
+If you have not ssh-key, you can run this command
+```
+$ git clone https://github.com/DiaboloKiat/project-Mask-RCNN.git
+```
+---
+## How to run docker
+First you need to build docker
+```
+$ cd ~/project-Mask-RCNN/docker
+$ source docker_build.sh
+```
 
+Now you can run your docker
+```
+$ cd ~/project-Mask-RCNN/docker
+$ source docker_run.sh
+```
 
+If you want to open a second terminal with docker, you can run this command
+```
+$ cd ~/project-Mask-RCNN/docker
+$ source docker_join.sh
+```
+---
+## How to open jupyter notebook
+After you go into the docker container, you can run this command to open jupyter notebook
+```
+$ jupyter notebook
+```
+- Then press the ```ctrl``` key and click on the displayed URL to enter jupyter notebook
+- All the ```.ipynb``` file will at the ```～/project-Mask-RCNN/jupyter/```, there are three ```.ipynb``` file, which are respectively ```Mask_RCNN_ResNet```, ```Mask_RCNN_ResNeXt``` and ```Mask_RCNN_ResNeSt```.
 

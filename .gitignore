@@ -3,6 +3,7 @@ build/
 devel/
 .catkin_workspace
 dataset/
+.Trash-1000/
 
 
 # Repo Detectron2
