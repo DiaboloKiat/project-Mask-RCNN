@@ -103,7 +103,7 @@ RUN pip3 install --user 'git+https://github.com/facebookresearch/fvcore'
 
 
 ##################################### install detectron2 #####################################
-RUN git clone https://github.com/facebookresearch/detectron2 detectron2_repo
+RUN git clone https://github.com/DiaboloKiat/detectron2.git detectron2_repo
 
 RUN pip3 install --user -e detectron2_repo
 
