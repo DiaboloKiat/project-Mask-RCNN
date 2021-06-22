@@ -63,6 +63,10 @@ RUN apt-get -o Acquire::ForceIPv4=true update && apt-get -yq dist-upgrade \
 
 ##################################### PIP ######################################
 
+RUN wget https://bootstrap.pypa.io/get-pip.py && \
+	python3 get-pip.py --user && \
+	rm get-pip.py
+
 RUN pip3 install --upgrade pip setuptools
 
 RUN pip3 install --upgrade \
@@ -95,7 +99,13 @@ RUN pip3 install \
     torchaudio==0.7.2 \
     -f https://download.pytorch.org/whl/torch_stable.html
 
-RUN pip install --user 'git+https://github.com/facebookresearch/fvcore'
+RUN pip3 install --user 'git+https://github.com/facebookresearch/fvcore'
+
+
+##################################### install detectron2 #####################################
+RUN git clone https://github.com/facebookresearch/detectron2 detectron2_repo
+
+RUN pip3 install --user -e detectron2_repo
 
 ##################################### setting #####################################
 RUN chown -R ${USER}:${USER} ${HOME}/

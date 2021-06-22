@@ -7,9 +7,9 @@ if [ ! -z "$1" ]; then
     BRANCH=$1
 fi
 
-echo "------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------------"
 echo "---------------------------pull project-Mask-RCNN--------------------------------"
-echo "------------------------------------------------------------------------"
+echo "---------------------------------------------------------------------------------"
 git pull
 
 CONFLICTS=$(git ls-files -u | wc -l)
@@ -19,29 +19,15 @@ if [ "$CONFLICTS" -gt 0 ] ; then
 fi
 
 echo "-----------------------------------------------------------------------"
-echo "-------------------------pull detectron2----------------------"
+echo "-------------------------pull detectron2-------------------------------"
 echo "-----------------------------------------------------------------------"
-cd ~/project-Mask-RCNN/catkin_ws/src/detectron2
+cd ~/project-Mask-RCNN/catkin_ws/src/mask_rcnn
 git checkout $BRANCH
 git pull
 
 CONFLICTS=$(git ls-files -u | wc -l)
 if [ "$CONFLICTS" -gt 0 ] ; then
    echo "There is conflict in detectron2. Aborting"
-   return 1
-fi
-
-BRANCH=resnest
-echo "-----------------------------------------------------------------------"
-echo "-------------------------pull detectron2-ResNeSt----------------------"
-echo "-----------------------------------------------------------------------"
-cd ~/project-Mask-RCNN/catkin_ws/src/detectron2-ResNeSt
-git checkout $BRANCH
-git pull
-
-CONFLICTS=$(git ls-files -u | wc -l)
-if [ "$CONFLICTS" -gt 0 ] ; then
-   echo "There is conflict in detectron2-ResNeSt. Aborting"
    return 1
 fi
 
